@@ -10,10 +10,14 @@
 body {
   margin: 0;
 }
+.background__container {
+  background: linear-gradient(to right, #fffffb 50%, #f8f8fa 50%);
+}
 .container {
   margin: 0 auto;
   display: flex;
   position: relative;
+  justify-content: center;
 }
 .title {
   margin: 0;
@@ -33,15 +37,10 @@ body {
   font-size: 36px;
   color: #dd3142;
 }
-.form__container {
-  background: #fffffb;
-  background-size: 100%;
-  width: 50%;
-}
 .form {
   display: inline-block;
   margin-top: 194px;
-  margin-left: 430px;
+  margin-right: 85px;
 }
 .form__title {
   margin: 0;
@@ -63,6 +62,7 @@ body {
   margin-bottom: 42px;
 }
 label {
+  display: block;
   font-family: "Nunito_Regular", sans-serif;
   font-weight: bold;
   font-size: 16px;
@@ -123,7 +123,8 @@ label {
 }
 .form__link {
   display: block;
-  margin: 44px auto 0 135px;
+  margin-top: 44px;
+  text-align: center;
 
   font-family: "Nunito_Regular", sans-serif;
   font-weight: bold;
@@ -133,12 +134,9 @@ label {
   text-decoration: none;
 }
 .image {
-  background: #f8f8fa;
-  background-size: 100%;
-  width: 50%;
+  margin-left: 11px;
 }
 .image img {
   margin-top: 254px;
-  margin-bottom: 331px;
   margin-left: 11px;
 }

@@ -4,12 +4,12 @@
 var stylesButton = getComputedStyle(document.getElementsByClassName('form__button')[0]);
 console.log(stylesButton);
 
-var buttonElement = document.getElementsByClassName('form__button');
+var buttonElement = document.getElementsByClassName('form__button')[0];
 console.log(buttonElement);
 
-buttonElement[0].style.color = '#DD3142';
-buttonElement[0].style.background = 'transparent';
-buttonElement[0].style.border = '1px solid #DD3142';
+buttonElement.style.color = '#DD3142';
+buttonElement.style.background = 'transparent';
+buttonElement.style.border = '1px solid #DD3142';
 
 
 // 2. Найдите первый элемент input и удалите у него значение (Antony Swarowski)
@@ -38,6 +38,7 @@ var checkbox = document.getElementById('checkbox');
 console.log('checkbox');
 checkbox.checked = true;
 
+
 // 7. Найдите все элементы по тегу input, и в цикле измените для каждого цвет нижней рамки на черный
 
 var elementsInput = document.getElementsByClassName('form__input');
@@ -47,7 +48,8 @@ for (let i = 0; i < elementsInput.length; i++) {
 }
 
 // 5. Найдите блок с полем Repeat Password и удалите его целиком
-var inputRepeatPassword = document.getElementsByClassName('form__input__wrapper__repeat_password');
+var inputRepeatPassword = document.getElementById('form__input__wrapper__repeat__password');
+inputRepeatPassword.remove();
 console.log(inputRepeatPassword);
-var form = document.getElementsByClassName('form')[0];
-document.form.removeChild(inputRepeatPassword);
+
+// inputRepeatPassword.remove();

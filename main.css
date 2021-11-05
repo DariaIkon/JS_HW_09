@@ -121,7 +121,7 @@ label {
 
   cursor: pointer;
 }
-.form__link {
+#form__link {
   display: block;
   margin-top: 44px;
   text-align: center;

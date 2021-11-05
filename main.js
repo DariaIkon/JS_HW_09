@@ -1,55 +1,86 @@
-// 1. Найдите кнопку "Sign Up". Замените ей фон на прозрачный. Сделайте рамку в 1 пиксель и текст цветом #DD3142.
-// var buttonElement = document.getElementsByClassName('form__button');
-// console.log(buttonElement);
-var stylesButton = getComputedStyle(document.getElementsByClassName('form__button')[0]);
-console.log(stylesButton);
+window.onload = function () {
 
-var buttonElement = document.getElementsByClassName('form__button')[0];
-console.log(buttonElement);
+// В поле "Full Name" запретите вводить цифры.
+    var inputFullName = document.getElementById('full_name');
+    inputFullName.keypress = (() => {
+        var number = parseInt(event.key);
+    if (!isNaN(number)) {
+        event.preventDefault();
+    } else {
+        console.log();
+    }
+    });
+// В поле "Your username" запретите вводить точки и запятые.
+    var inputUserName = document.getElementById('username');
+    inputUserName.keypress = (() => {
+    if (event.key === '.' || ',') {
+        inputFullName.preventDefault();
+    } else {
+        console.log(inputUserName.keypress);
+    }
+    });
+// При изменении значения чекбокса выводите в консоль соответствующее предложение: “Согласен” или “Не согласен”.
+    var checkbox = document.getElementById('checkbox');
+    checkbox.onchange = (() => {
+        if (checkbox.checked = true) {
+            console.log('Согласен');
+        } else {
+            console.log('Не согласен');
+        }
+    });
+    
 
-buttonElement.style.color = '#DD3142';
-buttonElement.style.background = 'transparent';
-buttonElement.style.border = '1px solid #DD3142';
+// При нажатии на кнопку “Sign Up”:
+// Проверьте на существование значения в каждом текстовом поле. 
+// Если какое - то поле не заполнено, выведите об этом ошибку,
+//  используя alert.Ошибка должна быть следующего вида "Заполните 
+// поле E - mail".
+// Проверьте совпадают ли пароли из двух текстовых полей. Если пароли 
+// не совпадают, выведите об этом ошибку, используя alert.
+// Проверьте выбран ли чекбокс. Если чекбокс не выбран, выведите об этом 
+// ошибку, используя alert.
+// Если код по всем проверкам успешно - вывести “OKAY”, используя alert.
 
-
-// 2. Найдите первый элемент input и удалите у него значение (Antony Swarowski)
-
-var inputFullName = document.querySelectorAll('input')[0];
-console.log(inputFullName.value);
-
-inputFullName.value = '';
-
-// 3. Найдите второй элемент input и добавьте ему значение - example
-
-var inputUserName = document.querySelectorAll('input')[1];
-inputUserName.value = 'example'
-
-
-// 4. Найдите третий элемент i;nput и задайте ему плейсхолдер email@mail.com
-
-var inputEmail = document.querySelectorAll('input')[2];
-inputEmail.placeholder = 'email@mail.com';
-
-
-
-// 6. Сделайте чекбокс выбранным
-
-var checkbox = document.getElementById('checkbox');
-console.log('checkbox');
-checkbox.checked = true;
-
-
-// 7. Найдите все элементы по тегу input, и в цикле измените для каждого цвет нижней рамки на черный
-
-var elementsInput = document.getElementsByClassName('form__input');
-
-for (let i = 0; i < elementsInput.length; i++) {
-    elementsInput[i].style.borderBottom = '1px solid black';
+    var button = document.getElementsByTagName('button');
+    button.onclick = (() => {
+    var inputs = document.getElementsByTagName('input');
+    for (var i = 0; i < inputs.length; i++) {
+    if (inputs.value[i] === undefined) {
+        alert('Заполните поле + inputs[i].id')
+        return;
+    }
 }
+        var password = document.getElementById('password');
+        var repeatPassword = document.getElementById('repeatPassword');
+        if (password !== repeatPassword) {
+            alert('Пароль введен не верно');
+        }
 
-// 5. Найдите блок с полем Repeat Password и удалите его целиком
-var inputRepeatPassword = document.getElementById('form__input__wrapper__repeat__password');
-inputRepeatPassword.remove();
-console.log(inputRepeatPassword);
+    });
 
-// inputRepeatPassword.remove();
+    
+// При нажатии на ссылку "Already have an account?" сделать следующие действия со страницей:
+// Текст "Get your free account" заменить на "Log in to the system".
+// Блоки с полями "Full Name", "E-mail", "Repeat Password" удалите.
+// Блок с чекбоксом также удалите.
+// Текст в кнопке замените на "Sign In"
+// Ссылку "Already have an account?" также удалите
+   
+    var link = document.getElementsByClassName('form__link');
+    link.onclick = (() => {
+        var inputs = document.getElementsByTagName('input');
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs.value[i] !== undefined) {
+                inputs[i].remove();
+                return;
+            }
+        }
+        link.innerText = 'Log in to the system';
+        button.innerText = 'Sign In';
+        link.remove();
+    });
+
+
+   
+
+ };

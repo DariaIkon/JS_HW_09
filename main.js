@@ -35,7 +35,7 @@ window.onload = function () {
 // ошибку, используя alert.
 // Если код по всем проверкам успешно - вывести “OKAY”, используя alert.
 
-    var button = document.getElementsByTagName('button');
+    var button = document.getElementById ('button');
     var inputs = document.getElementsByTagName('input');
     var password = document.getElementById('password');
     var repeatPassword = document.getElementById('repeatPassword');
@@ -60,12 +60,12 @@ window.onload = function () {
             alert('Заполните поле Repeat Password');
             return;
         } 
-        if (password[0].value !== repeatPassword[0].value) {
+        if (password.value !== repeatPassword.value) {
             alert('Пароль введен не верно');
             return;
         }
         if (checkbox.checked !== true) {
-            alert('Подтвердите соглашение')
+            alert('Подтвердите соглашение');
             return;
         } 
         alert('Okey');
@@ -83,11 +83,11 @@ window.onload = function () {
 // Ссылку "Already have an account?" также удалите
    
     var link = document.getElementById('form__link');
-    var formInputRepeatPassword = document.getElementsByClassName('form__input__wrapper__repeat__password');
-    var formInputFullName = document.getElementsByClassName('form__input__wrapper__full_name');
-    var formInputMail = document.getElementsByClassName('form__input__wrapper__mail');
-    var formInputCheckbox = document.getElementsByClassName('form__input__wrapper__checkbox');
-    var title = document.getElementsByClassName('form__title');
+    var formInputRepeatPassword = document.getElementById('form__input__wrapper__repeat__password');
+    var formInputFullName = document.getElementById('form__input__wrapper__full_name');
+    var formInputMail = document.getElementById('form__input__wrapper__mail');
+    var formInputCheckbox = document.getElementById('form__input__wrapper__checkbox');
+    var title = document.getElementById('form__title');
     link.onclick = ((event) => {
         formInputRepeatPassword.remove();
         formInputFullName.remove();

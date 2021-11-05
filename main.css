@@ -42,7 +42,7 @@ body {
   margin-top: 194px;
   margin-right: 85px;
 }
-.form__title {
+#form__title {
   margin: 0;
   font-family: "Nunito_Regular", sans-serif;
   font-weight: bold;
@@ -89,7 +89,7 @@ label {
 .form__input__wrapper__repeat_password {
   margin-bottom: 35px;
 }
-.form__input__wrapper__checkbox {
+#form__input__wrapper__checkbox {
   margin-bottom: 40px;
 }
 .form__input__wrapper__checkbox__text {
